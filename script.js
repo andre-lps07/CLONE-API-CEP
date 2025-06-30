@@ -21,14 +21,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
     function buscarCEP() {
         const cep = cepInput.value.trim();
-
-        if (!/^\d{8}$/.test(cep)) {
-            limpaCampos();
-            errorDiv.innerText = "CEP inválido. Digite 8 números.";
-            errorDiv.style.display = "block";
-            return;
-        }
-
         errorDiv.style.display = "none";
 
         fetch(`https://viacep.com.br/ws/${cep}/json/`)
